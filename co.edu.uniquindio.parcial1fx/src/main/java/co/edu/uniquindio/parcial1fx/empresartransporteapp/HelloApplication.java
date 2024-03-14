@@ -1,0 +1,33 @@
+package co.edu.uniquindio.parcial1fx.empresartransporteapp;
+
+import co.edu.uniquindio.parcial1fx.empresartransporteapp.model.Persona;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
+public class HelloApplication extends Application {
+    @Override
+    public void start(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+
+       // launch();
+
+
+            Persona persona1 = Persona.builder()
+                    .nombre("juan")
+                    .cedula("1090876353")
+                    .build();
+
+            System.out.print(persona1.getNombre());
+    }
+}
